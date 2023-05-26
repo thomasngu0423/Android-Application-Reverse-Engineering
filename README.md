@@ -49,3 +49,7 @@ for /f "tokens=2" %%# in ("%cmdcmdline%") do if /i "%%#" equ "/c" pause
 ```
 
 2. Download the latest JDK file from https://bitbucket.org/iBotPeaches/apktool/downloads/
+3. Open the command prompt in Windows
+4. Decompile the APK ```apktool d <file.apk>```
+5. Use the editor tool such as `Vscode` or `Android Studio` to modify and view the source code.
+6. Recompile the APK ```apktool b <folder>```
