@@ -2,7 +2,7 @@
 A comprehensive guide to reverse engineering Android apps using APKTool. Learn how to decompile, analyze, and modify APK files to gain insights into their inner workings. Explore the world of Android app security and customization. Unlock the secrets of APK reverse engineering with this in-depth writeup.
 
 ## Usage
-1. Save the code to apktool.bat
+1. Save the code to `apktool.bat`
 ```
 @echo off
 setlocal
@@ -48,8 +48,14 @@ rem Pause when ran non interactively
 for /f "tokens=2" %%# in ("%cmdcmdline%") do if /i "%%#" equ "/c" pause
 ```
 
-2. Download the latest JDK file from https://bitbucket.org/iBotPeaches/apktool/downloads/
+2. Download the latest JDK file from https://bitbucket.org/iBotPeaches/apktool/downloads/ and rename it to `apktool.jar`
 3. Open the command prompt in Windows
-4. Decompile the APK ```apktool d <file.apk>```
+4. Decompile the APK 
+```
+apktool d <file.apk>
+```
 5. Use the editor tool such as `Vscode` or `Android Studio` to modify and view the source code.
-6. Recompile the APK ```apktool b <folder>```
+6. Recompile the APK 
+```
+apktool b <folder>
+```
