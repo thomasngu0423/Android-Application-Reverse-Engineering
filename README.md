@@ -48,7 +48,7 @@ rem Pause when ran non interactively
 for /f "tokens=2" %%# in ("%cmdcmdline%") do if /i "%%#" equ "/c" pause
 ```
 
-2. Download the latest JDK file from https://bitbucket.org/iBotPeaches/apktool/downloads/ and rename it to `apktool.jar`
+2. Download the latest APKTool JAR file from https://bitbucket.org/iBotPeaches/apktool/downloads/ and rename it to `apktool.jar`
 3. Open the command prompt in Windows
 4. Decompile the APK 
 ```
