@@ -59,10 +59,15 @@ apktool d <file.apk>
 ```
 apktool b <folder>
 ```
-7. Sign the APK (Optional)
+## Sign the APK (Optional)
+1. Install JDK from https://www.oracle.com/java/technologies/downloads/
+2. Add binary file `path\Java\jdk-20\bin` to Environment Variables.
+3. Open the command prompt in Windows
+4. Generate a new key pair and store it in a keystore file 
 ```
 keytool -genkey -v -keystore test.keystore -storepass password -alias android -keypass password -keyalg RSA -keysize 2048 -validity 10000
 ```
+5. Sign the APK file using a keystore and key pair
 ```
 jarsigner.exe -verbose -keystore test.keystore -storepass password -keypass password /path/<file.apk> android
 ```
