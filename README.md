@@ -59,3 +59,10 @@ apktool d <file.apk>
 ```
 apktool b <folder>
 ```
+7. Sign the APK (Optional)
+```
+keytool -genkey -v -keystore test.keystore -storepass password -alias android -keypass password -keyalg RSA -keysize 2048 -validity 10000
+```
+```
+jarsigner.exe -verbose -keystore test.keystore -storepass password -keypass password /path/<file.apk> android
+```
