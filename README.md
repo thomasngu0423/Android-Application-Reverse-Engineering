@@ -59,6 +59,26 @@ apktool d <file.apk>
 ```
 apktool b <folder>
 ```
+
+## Bypassing Application-Only Trusted User Certificates
+1. Create a network_security_config.xml config file in `<decompiled_folder>/res/xml`
+2. Edit the file and add the following script.
+```
+<network-security-config> 
+    <base-config> 
+        <trust-anchors> 
+            <certificates src="system" /> 
+            <certificates src="user" /> 
+        </trust-anchors> 
+    </base-config> 
+</network-security-config>
+```
+3. Add the line `android:networkSecurityConfig="@xml/network_security_config"` under application tag in `<decompiled_folder>/AndroidManifest.xml`
+4. Recompile the APK 
+```
+apktool b <folder>
+```
+
 ## Sign the APK (Optional)
 1. Install JDK from https://www.oracle.com/java/technologies/downloads/
 2. Add binary file `path\Java\jdk-20\bin` to Environment Variables.
