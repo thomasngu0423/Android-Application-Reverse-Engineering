@@ -104,7 +104,7 @@ frida -l [frida script] -U -f [app_package name]
 ```
 
 ## Bypassing Application-Only Trusted User Certificates
-1. Create a network_security_config.xml config file in `<decompiled_folder>/res/xml`
+1. Create a `network_security_config.xml` config file in `<decompiled_folder>/res/xml`
 2. Edit the file and add the following script.
 ```
 <network-security-config> 
