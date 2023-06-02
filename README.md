@@ -5,7 +5,7 @@ An easy guide to reverse engineering Android apps using APKTool. Learn how to de
   * [APKTool Usage (Decompiled APK)](#apktool-usage--decompiled-apk-)
   * [Bypassing Root Detection & SSL Pinning (Frida)](#bypassing-root-detection---ssl-pinning--frida-)
   * [Bypassing Application-Only Trusted User Certificates](#bypassing-application-only-trusted-user-certificates)
-  * [Sign the APK (Optional)](#sign-the-apk--optional-)
+  * [Sign the APK (Optional)](#sign-the-apk-optional)
 
 
 
