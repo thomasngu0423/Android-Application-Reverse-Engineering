@@ -60,6 +60,40 @@ apktool d <file.apk>
 apktool b <folder>
 ```
 
+## Bypassing Root Detection & SSL Pinning (Frida)
+1. Install Frida
+```
+pip install frida-tools
+```
+2. Download the Root Detection & SSL Pinning bypass script from https://codeshare.frida.re/@dzonerzy/fridantiroot/
+
+3. Check the app package name 
+```
+adb shell pm list packages
+```
+
+4. Download the frida server from https://github.com/frida/frida/releases (check the version)
+```
+adb push [frida server file] /data/local/tmp
+```
+
+5. Execute the frida server in the adb shell
+```
+adb shell
+su
+cd /data/local/tmp
+./[frida server file]
+```
+
+6. Run the frida script to bypass Root Detection & SSL Pinning
+```
+frida -l [frida script] -U --no-pause -f [app_package name] 
+```
+ or
+```
+frida -l [frida script] -U -f [app_package name]
+```
+
 ## Bypassing Application-Only Trusted User Certificates
 1. Create a network_security_config.xml config file in `<decompiled_folder>/res/xml`
 2. Edit the file and add the following script.
