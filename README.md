@@ -75,7 +75,7 @@ apktool b <folder>
 pip install frida-tools
 ```
 
-2. heck the app package name 
+2. Check the app package name 
 ```
 adb shell pm list packages
 ```
