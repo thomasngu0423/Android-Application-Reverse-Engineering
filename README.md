@@ -74,19 +74,18 @@ apktool b <folder>
 ```
 pip install frida-tools
 ```
-2. Download the Root Detection & SSL Pinning bypass script from https://codeshare.frida.re/@dzonerzy/fridantiroot/
 
-3. Check the app package name 
+2. heck the app package name 
 ```
 adb shell pm list packages
 ```
 
-4. Download the frida server from https://github.com/frida/frida/releases (check the version)
+3. Download the frida server from https://github.com/frida/frida/releases (check the version)
 ```
 adb push [frida server file] /data/local/tmp
 ```
 
-5. Execute the frida server in the adb shell
+4. Execute the frida server in the adb shell
 ```
 adb shell
 su
@@ -94,13 +93,13 @@ cd /data/local/tmp
 ./[frida server file]
 ```
 
-6. Run the frida script to bypass Root Detection & SSL Pinning
+5. Run the frida script to bypass Root Detection & SSL Pinning
 ```
-frida -l [frida script] -U --no-pause -f [app_package name] 
+frida --codeshare dzonerzy/fridantiroot -U --no-pause -f [app_package name] 
 ```
  or
 ```
-frida -l [frida script] -U -f [app_package name]
+frida --codeshare dzonerzy/fridantiroot -U -f [app_package name]
 ```
 
 ## Bypassing Application-Only Trusted User Certificates
