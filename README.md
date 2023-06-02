@@ -1,6 +1,15 @@
 # Android Application Reverse Engineering 
 An easy guide to reverse engineering Android apps using APKTool. Learn how to decompile, analyze, and modify APK files to gain insights into their inner workings. Explore the world of Android app security and customization. Unlock the secrets of APK reverse engineering with this in-depth writeup.
 
+## Table Of Content
+  * [APKTool Usage (Decompiled APK)](#apktool-usage--decompiled-apk-)
+  * [Bypassing Root Detection & SSL Pinning (Frida)](#bypassing-root-detection---ssl-pinning--frida-)
+  * [Bypassing Application-Only Trusted User Certificates](#bypassing-application-only-trusted-user-certificates)
+  * [Sign the APK (Optional)](#sign-the-apk--optional-)
+
+
+
+
 ## APKTool Usage (Decompiled APK)
 1. Save the code to `apktool.bat`
 ```
