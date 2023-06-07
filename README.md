@@ -80,7 +80,7 @@ pip install frida-tools
 adb shell pm list packages
 ```
 
-3. Download the frida server from https://github.com/frida/frida/releases (check the version)
+3. Download the frida server from https://github.com/frida/frida/releases (check the version) and push the file into the phone.
 ```
 adb push [frida server file] /data/local/tmp
 ```
