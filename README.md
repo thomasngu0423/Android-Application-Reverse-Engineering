@@ -102,7 +102,7 @@ frida --codeshare dzonerzy/fridantiroot -U --no-pause -f [app_package name]
 frida --codeshare dzonerzy/fridantiroot -U -f [app_package name]
 ```
 
-## Bypassing Application-Only Trusted User Certificates
+## Bypassing Application-Only Trusted System Certificates
 1. Create a `network_security_config.xml` config file in `<decompiled_folder>/res/xml`
 2. Edit the file and add the following script.
 ```
