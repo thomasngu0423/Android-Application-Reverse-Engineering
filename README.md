@@ -6,6 +6,7 @@ An easy guide to reverse engineering Android apps using APKTool. Learn how to de
   * [Bypassing Root Detection & SSL Pinning (Frida)](#bypassing-root-detection--ssl-pinning-frida)
   * [Bypassing Application-Only Trusted User Certificates](#bypassing-application-only-trusted-system-certificates)
   * [Sign the APK (Optional)](#sign-the-apk-optional)
+  * [Bypassing Anti-Tamper (Server-Side Hash Checking)](#bypassing-anti-tamper-server-side-hash-checking)
 
 
 
@@ -120,6 +121,18 @@ frida --codeshare dzonerzy/fridantiroot -U -f [app_package name]
 ```
 apktool b <folder>
 ```
+
+## Bypassing Anti-Tamper (Server-Side Hash Checking)
+1. Decompile using JADX.
+2. Class Search
+```
+com.google.android.gms.common.api.CommonStatusCodes
+- CommonStatusCodes
+- getStatusCodeString
+```
+3. Burp Suite intercepts hash verification's traffic.
+4. Replace the status code in the Response Body.
+
 
 ## Sign the APK (Optional)
 1. Install JDK from https://www.oracle.com/java/technologies/downloads/
