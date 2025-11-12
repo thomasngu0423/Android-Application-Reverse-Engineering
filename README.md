@@ -136,10 +136,14 @@ com.google.android.gms.common.api.CommonStatusCodes
 
 ## Root Detection Bypass
 1. Decompile using Visual Studio Code (APKLab)
-2. Check for the keyword
+2. Check for the Root Detection's Keyword
 ```
 isRooted
+checkRoot
+su
+magisk
 ```
+3. The sample source code for Root Detection.
 ```
 .method public final isRooted()Z
     .locals 1
@@ -172,7 +176,7 @@ isRooted
     return p0
 .end method
 ```
-3. Return the code to False.
+4. Force the function to always return False (Not Checking For Root Detection).
 ```
 .method public final isRooted()Z
     .locals 1
