@@ -7,6 +7,7 @@ An easy guide to reverse engineering Android apps using APKTool. Learn how to de
   * [Bypassing Application-Only Trusted User Certificates](#bypassing-application-only-trusted-system-certificates)
   * [Sign the APK (Optional)](#sign-the-apk-optional)
   * [Bypassing Anti-Tamper (Server-Side Hash Checking)](#bypassing-anti-tamper-server-side-hash-checking)
+  * [Root Detection Bypass](#root-detection-bypass)
 
 
 
@@ -133,6 +134,54 @@ com.google.android.gms.common.api.CommonStatusCodes
 3. Burp Suite intercepts hash verification's traffic.
 4. Replace the status code in the Response Body.
 
+## Root Detection Bypass
+1. Decompile using Visual Studio Code (APKLab)
+2. Check for the keyword
+```
+isRooted
+```
+```
+.method public final isRooted()Z
+    .locals 1
+
+    iget-object p0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
+
+    invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "getPath(...)"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p0, Ljava/lang/CharSequence;
+
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    move-result p0
+
+    if-lez p0, :cond_0
+
+    const/4 p0, 0x1
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+```
+3. Return the code to False.
+```
+.method public final isRooted()Z
+    .locals 1
+
+    const/4 v0, 0x0    # Load constant 0 (false)
+    return v0          # Always return false
+
+.end method
+```
 
 ## Sign the APK (Optional)
 1. Install JDK from https://www.oracle.com/java/technologies/downloads/
